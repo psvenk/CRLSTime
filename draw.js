@@ -48,7 +48,13 @@ function resetScale() {
 // CRLSTime button
 function drawCRLSTimeButton() {
   drawSmallCircle(upperLeftX, upperLeftY, smRadius, '#DDD');
-  ctx.font = "bold " + radius * 0.067 + "px arial";
+  ctx.font = "bold " + radius * 0.067 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+// see https://furbo.org/2018/03/28/system-fonts-in-css/
+// and https://furbo.org/2015/07/09/i-left-my-system-fonts-in-san-francisco/
+// and https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   ctx.fillStyle = '#888';
@@ -58,7 +64,11 @@ function drawCRLSTimeButton() {
 // Info/settings button
 function drawSettingsButton() {
   drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
-  ctx.font = radius * 0.2 + "px arial";
+  ctx.font = radius * 0.2 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   ctx.fillStyle = '#999';
@@ -67,7 +77,11 @@ function drawSettingsButton() {
 
 function drawLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
-  ctx.font = radius * 0.25 + "px arial";
+  ctx.font = radius * 0.25 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   ctx.fillStyle = '#888';
@@ -109,7 +123,11 @@ function isInside(pos, rect) {
 function drawDateButton() {
   drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
   ctx.fillStyle = '#888';
-  ctx.font = "bold " + radius * 0.07 + "px arial";
+  ctx.font = "bold " + radius * 0.07 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
@@ -173,7 +191,11 @@ function drawFace(ctx, radius) {
 // incr : increment for numbering
 // max : largest number on face (12 oclock position)
 function drawNumbersNormal(ctx, radius, incr, max) {
-  ctx.font = radius * 0.20 + "px arial";
+  ctx.font = radius * 0.20 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   for (var num = incr; num <= max; num += incr) {
@@ -195,7 +217,11 @@ function drawNumbersNormal(ctx, radius, incr, max) {
 // max : largest number on face (12 oclock position)
 function drawNumbersCountDown(ctx, radius, incr, max) {
   var ang;
-  ctx.font = radius * 0.20 + "px arial";
+  ctx.font = radius * 0.20 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   // next line assures numbering is done as multiple of incr
@@ -218,7 +244,11 @@ function drawNumbersCountDown(ctx, radius, incr, max) {
 }
 
 function drawSpecialLabel(ctx, radius, label) {
-  ctx.font = radius * 0.25 + "px arial";
+  ctx.font = radius * 0.25 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
@@ -234,7 +264,11 @@ function drawSpecialLabel(ctx, radius, label) {
 }
 
 function drawPeriodLabel(ctx, radius, label) {
-  ctx.font = radius * 0.40 + "px arial";
+  ctx.font = radius * 0.40 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
@@ -315,7 +349,11 @@ function drawBSButton() {
     blackOrSilverText = "Silver Day";
     ctx.fillStyle = '#999';
   }
-  ctx.font = "bold " + radius * 0.07 + "px arial";
+  ctx.font = "bold " + radius * 0.07 + "px system-ui, -apple-system, BlinkMacSystemFont, " +
+  "\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", " +
+  "\"Cantarell\", \"Fira Sans\", \"Droid Sans\", " +
+  "\"Helvetica Neue\", sans-serif";
+  
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   ctx.fillText(blackOrSilverText, lowerRightX, lowerRightY);
