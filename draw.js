@@ -5,8 +5,6 @@ var radius, delta, smRadius;
 var upperLeftX, upperLeftY, upperRightX, upperRightY, lowerLeftX, lowerLeftY, lowerRightX, lowerRightY;
 var switchLunchRect, canvas, ctx;
 
-var schedule;
-
 window.addEventListener('resize', redraw);
 
 function redraw() {

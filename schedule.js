@@ -773,8 +773,12 @@ function isWeekend() {
 }
 
 function getPeriodIndex() {
-  var now = ServerDate;
-  return schedule.findIndex((element, index, array) => now > element.start && now < array[index + 1].start);
+    var now = ServerDate;
+    for(index = 0; true; index++){
+      if (now > schedule[index].start && now < schedule[index + 1].start) {
+        return index;
+      }
+    }
 }
 
 function getPeriodLength(i) {
