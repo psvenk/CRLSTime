@@ -1,8 +1,8 @@
 [submodule "branches/change-font"]
 	path = branches/change-font
-	url = git@github.com:psvenk/CRLSTime.git
+	url = https://github.com/psvenk/CRLSTime.git
 	branch = change-font
 [submodule "branches/testing"]
 	path = branches/testing
-	url = git@github.com:psvenk/CRLSTime.git
+	url = https://github.com/psvenk/CRLSTime.git
 	branch = testing
