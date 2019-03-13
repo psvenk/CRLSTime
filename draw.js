@@ -1,4 +1,4 @@
-const imageObj = new Image();
+var imageObj = new Image();
 imageObj.src = 'falcon_high_res2.png';
 
 var radius, delta, smRadius;
@@ -95,7 +95,7 @@ function drawSmallCircle(cx, cy, r, color) {
 ////////////////////// button logic //////////////////////
 //Function to get the mouse position
 function getMousePos(canvas, event) {
-  const rect = canvas.getBoundingClientRect();
+  var rect = canvas.getBoundingClientRect();
   return {
     x: event.clientX - rect.left - delta,
     y: event.clientY - rect.top - delta
@@ -118,9 +118,9 @@ function drawDateButton() {
 function drawClock() {
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius * 1.1 / 2, -1 / 2 * radius, radius, 1.27 * radius);
-  const periodIndex = getPeriodIndex();
-  const periodLabel = schedule[periodIndex].label;
-  const periodLength = getPeriodLength(periodIndex);
+  var periodIndex = getPeriodIndex();
+  var periodLabel = schedule[periodIndex].label;
+  var periodLength = getPeriodLength(periodIndex);
 
   // when to display a normal clock
   if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()) {
@@ -132,7 +132,7 @@ function drawClock() {
   }
   else // display school time
   {
-    const interval = periodLength > 120 ? 15 :
+    var interval = periodLength > 120 ? 15 :
       periodLength > 55 ? 10 :
       periodLength > 20 ? 5 : 1;
 
@@ -153,7 +153,7 @@ function drawFace(ctx, radius) {
   ctx.fill();
 
   // outside ring
-  const grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+  var grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
   grad.addColorStop(0, '#333');
   grad.addColorStop(0.5, '#FFF');
   grad.addColorStop(1, '#333');
@@ -222,7 +222,7 @@ function drawSpecialLabel(ctx, radius, label) {
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
-  const ang = Math.PI;
+  var ang = Math.PI;
   ctx.rotate(ang);
   ctx.translate(0, radius * 0.35);
   ctx.rotate(-ang);
@@ -238,7 +238,7 @@ function drawPeriodLabel(ctx, radius, label) {
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
-  const ang = Math.PI;
+  var ang = Math.PI;
   ctx.rotate(ang);
   ctx.translate(0, -radius * 0.32);
   ctx.rotate(-ang);
@@ -250,7 +250,7 @@ function drawPeriodLabel(ctx, radius, label) {
 }
 
 function drawNormalTime(ctx, radius) {
-  const now = ServerDate;
+  var now = ServerDate;
   var hour = now.getHours();
   var minute = now.getMinutes();
   var second = now.getSeconds();
@@ -270,7 +270,7 @@ function drawNormalTime(ctx, radius) {
 }
 
 function drawSchoolTime(ctx, radius, index) {
-  const now = ServerDate;
+  var now = ServerDate;
   var second = now.getSeconds();
 
   // minute
@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Binding the click event on the canvas
   canvas.addEventListener('click', function(evt) {
-    const mousePos = getMousePos(canvas, evt);
+    var mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos, switchLunchRect)) {
       advanceLunchMode();
       drawLunchButton();
