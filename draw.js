@@ -21,10 +21,12 @@ function resetScale() {
   radius = smallerDimension / 2 - 12;
 
   delta = radius;
-  ctx.resetTransform();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  // better browser compatiblity than ctx.resetTransform();
+  // https://stackoverflow.com/questions/11144193/html5-translate-method-how-to-reset-to-default
   ctx.translate(delta, delta);
   radius *= 0.93;
-
+  
   smRadius = radius * 0.18;
 
   upperLeftX = -radius * 0.88;
@@ -36,7 +38,7 @@ function resetScale() {
   lowerRightX = radius * 0.88;
   lowerRightY = radius * 0.88;
 
-  //The rectangle should have x,y,width,height properties
+  // The rectangle should have x,y,width,height properties
   switchLunchRect = {
     x: lowerLeftX - smRadius,
     y: lowerLeftY - smRadius,
