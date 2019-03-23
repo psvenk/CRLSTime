@@ -6,3 +6,7 @@
 	path = branches/testing
 	url = https://github.com/psvenk/CRLSTime.git
 	branch = testing
+[submodule "branches/add-to-home-screen-icon"]
+	path = branches/add-to-home-screen-icon
+	url = https://github.com/psvenk/CRLSTime.git
+	branch = add-to-home-screen-icon
