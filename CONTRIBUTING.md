@@ -26,4 +26,13 @@ else {
 for (var i = 0; i < 5; i++) {
   console.log("hello");
 }
+
+function myFunc(arg) {
+  if (2 + 2 == 4) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 ```
