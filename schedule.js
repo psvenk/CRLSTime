@@ -1,20 +1,4 @@
-// Lunch
-function advanceLunchMode() {
-  if (lunchMode === "A") {
-    lunchMode = "B";
-    schedule = scheduleB;
-  }
-  else if (lunchMode === "B") {
-    lunchMode = "C";
-    schedule = scheduleC;
-    }
-  else if (lunchMode === "C") {
-    lunchMode = "A";
-    schedule = scheduleA;
-  }
-  localStorage.setItem("lunch", lunchMode);
-  drawLunchButton();
-}
+"use strict";
 
 /////////////// schedule types //////////////////
 // Table of period labels and start times
@@ -32,7 +16,7 @@ var schedules = {
 	["LA", 11, 12],
 	["LA-3", 11, 42],
 	["3", 11, 46],
-	["3-4", 13, 06],
+	["3-4", 13, 6],
 	["4", 13, 10],
 	["after", 14, 30],
 	["end", 23, 59]
@@ -158,7 +142,7 @@ var schedules = {
 	["3-4", 13, 22],
 	["4", 13, 26],
 	["after", 14, 30],
-	["info", 17, 00], // Curriculum night
+	["info", 17, 0], // Curriculum night
 	["info-1", 18, 30],
 	["1", 18, 35],
 	["1-2", 18, 50],
@@ -187,7 +171,7 @@ var schedules = {
 	["3-4", 13, 22],
 	["4", 13, 26],
 	["after", 14, 30],
-	["info", 17, 00], // Curriculum night
+	["info", 17, 0], // Curriculum night
 	["info-1", 18, 30],
 	["1", 18, 35],
 	["1-2", 18, 50],
@@ -214,7 +198,7 @@ var schedules = {
 	["LC-4", 13, 22],
 	["4", 13, 26],
 	["after", 14, 30],
-	["info", 17, 00], // Curriculum night
+	["info", 17, 0], // Curriculum night
 	["info-1", 18, 30],
 	["1", 18, 35],
 	["1-2", 18, 50],
@@ -340,7 +324,7 @@ var schedules = {
 	["LA", 11, 12],
 	["LA-1", 11, 42],
 	["1", 11, 46],
-	["1-2", 13, 06],
+	["1-2", 13, 6],
 	["2", 13, 10],
 	["after", 14, 30],
 	["end", 23, 59]
@@ -381,7 +365,7 @@ var schedules = {
 	["LA", 11, 12],
 	["LA-3", 11, 42],
 	["3", 11, 46],
-	["3-4", 13, 06],
+	["3-4", 13, 6],
 	["4", 13, 10],
 	["after", 14, 30],
 	["end", 23, 59]
@@ -424,8 +408,8 @@ var schedules = {
 	["LA", 11, 20],
 	["LA-3", 11, 50],
 	["3", 11, 54],
-	["3-4", 13, 00],
-	["4", 13, 04],
+	["3-4", 13, 0],
+	["4", 13, 4],
 	["4-2", 13, 45],
 	["2", 13, 49],
 	["after", 14, 30],
@@ -443,8 +427,8 @@ var schedules = {
 	["LB", 11, 55],
 	["LB-3", 12, 25],
 	["3", 12, 27],
-	["3-4", 13, 00],
-	["4", 13, 04],
+	["3-4", 13, 0],
+	["4", 13, 4],
 	["4-2", 13, 45],
 	["2", 13, 49],
 	["after", 14, 30],
@@ -460,8 +444,8 @@ var schedules = {
 	["3", 11, 20],
 	["3-LC", 12, 26],
 	["LC", 12, 30],
-	["3-4", 13, 00],
-	["4", 13, 04],
+	["3-4", 13, 0],
+	["4", 13, 4],
 	["4-2", 13, 45],
 	["2", 13, 49],
 	["after", 14, 30],
@@ -498,7 +482,7 @@ var schedules = {
 	["LA", 11, 12],
 	["LA-3", 11, 42],
 	["3", 11, 46],
-	["3-4", 13, 06],
+	["3-4", 13, 6],
 	["4", 13, 10],
 	["after", 14, 30],
 	["end", 23, 59]
@@ -534,23 +518,23 @@ var schedules = {
 	["8:30", 8, 30],
 	["8:40", 8, 40],
 	["8:50", 8, 50],
-	["9:00", 9, 00],
+	["9:00", 9, 0],
 	["9:10", 9, 10],
 	["9:20", 9, 20],
 	["9:30", 9, 30],
 	["9:40", 9, 40],
 	["9:50", 9, 50],
-	["10:00", 10, 00],
+	["10:00", 10, 0],
 	["10:10", 10, 10],
 	["10:20", 10, 20],
 	["10:30", 10, 30],
 	["10:40", 10, 40],
 	["10:50", 10, 50],
-	["before", 11, 00],
+	["before", 11, 0],
 	["LA", 11, 12],
 	["LA-3", 11, 42],
 	["3", 11, 46],
-	["3-4", 13, 06],
+	["3-4", 13, 6],
 	["4", 13, 10],
 	["after", 14, 30],
 	["end", 23, 59]
@@ -562,19 +546,19 @@ var schedules = {
 	["8:30", 8, 30],
 	["8:40", 8, 40],
 	["8:50", 8, 50],
-	["9:00", 9, 00],
+	["9:00", 9, 0],
 	["9:10", 9, 10],
 	["9:20", 9, 20],
 	["9:30", 9, 30],
 	["9:40", 9, 40],
 	["9:50", 9, 50],
-	["10:00", 10, 00],
+	["10:00", 10, 0],
 	["10:10", 10, 10],
 	["10:20", 10, 20],
 	["10:30", 10, 30],
 	["10:40", 10, 40],
 	["10:50", 10, 50],
-	["before", 11, 00],
+	["before", 11, 0],
 	["3", 11, 12],
 	["3-LB", 11, 52],
 	["LB", 11, 54],
@@ -592,19 +576,19 @@ var schedules = {
 	["8:30", 8, 30],
 	["8:40", 8, 40],
 	["8:50", 8, 50],
-	["9:00", 9, 00],
+	["9:00", 9, 0],
 	["9:10", 9, 10],
 	["9:20", 9, 20],
 	["9:30", 9, 30],
 	["9:40", 9, 40],
 	["9:50", 9, 50],
-	["10:00", 10, 00],
+	["10:00", 10, 0],
 	["10:10", 10, 10],
 	["10:20", 10, 20],
 	["10:30", 10, 30],
 	["10:40", 10, 40],
 	["10:50", 10, 50],
-	["before", 11, 00],
+	["before", 11, 0],
 	["3", 11, 12],
 	["3-LC", 12, 32],
 	["LC", 12, 36],
@@ -622,25 +606,25 @@ var schedules = {
 	["CM-2", 9, 44],
 	["2", 9, 48],
 	["Lunch", 11, 8],
-	["12:00", 12, 00],
+	["12:00", 12, 0],
 	["12:10", 12, 10],
 	["12:20", 12, 20],
 	["12:30", 12, 30],
 	["12:40", 12, 40],
 	["12:50", 12, 50],
-	["1:00", 13, 00],
+	["1:00", 13, 0],
 	["1:10", 13, 10],
 	["1:20", 13, 20],
 	["1:30", 13, 30],
 	["1:40", 13, 40],
 	["1:50", 13, 50],
-	["2:00", 14, 00],
+	["2:00", 14, 0],
 	["2:10", 14, 10],
 	["2:20", 14, 20],
 	["2:30", 14, 30],
 	["2:40", 14, 40],
 	["2:50", 14, 50],
-	["after", 15, 00],
+	["after", 15, 0],
 	["end", 23, 59]
     ],
     scheduleLastDay: [
@@ -651,9 +635,9 @@ var schedules = {
 	["2", 9, 5],
 	["2-3", 10, 1],
 	["3", 10, 5],
-	["3-4", 11, 01],
-	["4", 11, 05],
-	["after", 12, 01],
+	["3-4", 11, 1],
+	["4", 11, 5],
+	["after", 12, 1],
 	["end", 23, 59]
     ],
     scheduleFirstDay2ndSemester: [
@@ -742,30 +726,51 @@ function getStart(block) {
   return new Date(now.getFullYear(), now.getMonth(), now.getDate(), block[1], block[2], 0, 0);
 }
 
+var scheduleA = schedules.scheduleA;
+var scheduleB = schedules.scheduleB;
+var scheduleC = schedules.scheduleC;
+
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-var scheduleA = schedules.scheduleLastDay;
-var scheduleB = schedules.scheduleLastDay;
-var scheduleC = schedules.scheduleLastDay;
-var lunchMode = "A";
+// scheduleA = schedules.scheduleLastDay;
+// scheduleB = schedules.scheduleLastDay;
+// scheduleC = schedules.scheduleLastDay;
 
-if (localStorage.lunch) {
-  lunchMode = localStorage.lunch;
-}
+var lunchMode = localStorage.lunch || "A";
 
-function getSchedule(key) {
+if (!(lunchMode in ["A", "B", "C"])) lunchMode = "A";
+
+var schedule = (function(key) {
   switch (key) {
     case "A": return scheduleA;
     case "B": return scheduleB;
     case "C": return scheduleC;
     default: return scheduleA;
   }
+})(lunchMode);
+
+function advanceLunchMode() {
+  switch (lunchMode) {
+    case "A":
+      lunchMode = "B";
+      schedule = scheduleB;
+      break;
+    case "B":
+      lunchMode = "C";
+      schedule = scheduleC;
+      break;
+    case "C":
+      lunchMode = "A";
+      schedule = scheduleA;
+      break;
+  }
+  localStorage.setItem("lunch", lunchMode);
+  drawLunchButton();
 }
 
-var schedule = getSchedule(lunchMode);
 
 function isHoliday() {
-  for (i = 0; i < schoolHolidays.length; i++) {
+  for (var i = 0; i < schoolHolidays.length; i++) {
     if (schoolHolidays[i][0] === now.getMonth() + 1 && schoolHolidays[i][1] === now.getDate()) {
       return true;
     }
@@ -781,7 +786,7 @@ function isWeekend() {
 }
 
 function getPeriodIndex() {
-  for (i = 0; true; i++) {
+  for (var i = 0; i < schedule.length - 1; i++) {
     if (now > getStart(schedule[i]) && now < getStart(schedule[i + 1])) {
       return i;
     }
@@ -793,7 +798,7 @@ function getPeriodLength(i) {
 }
 
 function isBlackDay() {
-  for (i = 0; i < blackDays.length; i++) {
+  for (var i = 0; i < blackDays.length; i++) {
     if (blackDays[i][0] === now.getMonth() + 1 && blackDays[i][1] === now.getDate()) {
       return true;
     }

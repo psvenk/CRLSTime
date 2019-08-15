@@ -1,3 +1,5 @@
+"use strict";
+
 var now = ServerDate;
 var offset = 0;
 // in case `now` needs to be manually changed for development purposes
